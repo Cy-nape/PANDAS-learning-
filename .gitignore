@@ -1,0 +1,21 @@
+# Byte‑compiled / Python artefacts
+__pycache__/
+*.py[cod]
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environments – keep them out of the repo
+.venv/
+myenv/
+venv/
+env/
+
+# macOS finder metadata
+.DS_Store
+
+# JupyterLab workspace files
+*.jl
+
+# Logs / temporary output
+*.log
