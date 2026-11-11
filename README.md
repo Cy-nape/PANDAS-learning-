@@ -40,16 +40,16 @@ PANDAS-learning-/
 │
 ├── data_cleaning/                  ← ⭐ Main learning folder
 │   │
-│   ├── 📓 Notebooks (start here)
-│   │   ├── netflixlast.ipynb       # 1. Netflix — full cleaning pipeline
-│   │   ├── netflix.ipynb           # 2. Netflix — exploring raw data
-│   │   ├── hr.ipynb                # 3. HR Employee Attrition — cleaning
-│   │   ├── zomatowala.ipynb        # 4. Zomato restaurants — advanced cleaning
-│   │   ├── sales.ipynb             # 5. Sales data — missing values & export
-│   │   ├── fashion.ipynb           # 6. Fashion dataset — column cleaning
-│   │   ├── notebook.ipynb          # 7. Airbnb — exploring a large dataset
-│   │   ├── pyjanitor.ipynb         # 8. pyjanitor — automated cleaning library
-│   │   └── matplotlib.ipynb        # 9. Matplotlib — visualising clean data
+│   ├── 📓 Notebooks (start here — click to open on GitHub)
+│   │   ├── netflixlast.ipynb       → https://github.com/Cy-nape/PANDAS-learning-/blob/main/data_cleaning/netflixlast.ipynb
+│   │   ├── netflix.ipynb           → https://github.com/Cy-nape/PANDAS-learning-/blob/main/data_cleaning/netflix.ipynb
+│   │   ├── hr.ipynb                → https://github.com/Cy-nape/PANDAS-learning-/blob/main/data_cleaning/hr.ipynb
+│   │   ├── zomatowala.ipynb        → https://github.com/Cy-nape/PANDAS-learning-/blob/main/data_cleaning/zomatowala.ipynb
+│   │   ├── sales.ipynb             → https://github.com/Cy-nape/PANDAS-learning-/blob/main/data_cleaning/sales.ipynb
+│   │   ├── fashion.ipynb           → https://github.com/Cy-nape/PANDAS-learning-/blob/main/data_cleaning/fashion.ipynb
+│   │   ├── notebook.ipynb          → https://github.com/Cy-nape/PANDAS-learning-/blob/main/data_cleaning/notebook.ipynb
+│   │   ├── pyjanitor.ipynb         → https://github.com/Cy-nape/PANDAS-learning-/blob/main/data_cleaning/pyjanitor.ipynb
+│   │   └── matplotlib.ipynb        → https://github.com/Cy-nape/PANDAS-learning-/blob/main/data_cleaning/matplotlib.ipynb
 │   │
 │   └── 📁 Datasets
 │       ├── netflix_titles.csv       # Raw Netflix data
@@ -99,65 +99,144 @@ jupyter lab
 
 Follow these notebooks **in order**. Each one builds on the previous.
 
-### Step 1 — `netflix.ipynb` &nbsp;📺 Exploring Raw Data
-> **Dataset:** `netflix1.csv`  
-> **Concepts:** `read_csv()`, `head()`, `tail()`, `shape`, `columns`, `dtypes`, `info()`  
-> **Goal:** Learn how to load a CSV file and get a first look at messy real‑world data.
+### Step 1 — 📺 Exploring Raw Data
+**Notebook:** [`data_cleaning/netflix.ipynb`](https://github.com/Cy-nape/PANDAS-learning-/blob/main/data_cleaning/netflix.ipynb)  
+**Dataset:** [`netflix1.csv`](https://github.com/Cy-nape/PANDAS-learning-/blob/main/data_cleaning/netflix1.csv)
+
+| Concept | Method |
+|---------|--------|
+| Load a CSV | `pd.read_csv()` |
+| Preview rows | `head()`, `tail()` |
+| Understand the data | `.shape`, `.columns`, `.dtypes` |
+| Check null counts | `isnull().sum()` |
+
+> **Goal:** Load a CSV file and get a first look at messy real‑world data.
 
 ---
 
-### Step 2 — `netflixlast.ipynb` &nbsp;📺 Full Cleaning Pipeline
-> **Dataset:** `netflix_titles.csv`  
-> **Concepts:** `isnull()`, `isna().sum()`, `dropna()`, `fillna()`, `duplicated()`, `drop_duplicates()`, `to_datetime()`, export to Excel  
-> **Goal:** Complete end‑to‑end cleaning of a dataset — the most important notebook in the guide.
+### Step 2 — 📺 Full Cleaning Pipeline
+**Notebook:** [`data_cleaning/netflixlast.ipynb`](https://github.com/Cy-nape/PANDAS-learning-/blob/main/data_cleaning/netflixlast.ipynb)  
+**Dataset:** [`netflix_titles.csv`](https://github.com/Cy-nape/PANDAS-learning-/blob/main/data_cleaning/netflix_titles.csv)
+
+| Concept | Method |
+|---------|--------|
+| Count missing values | `isnull().sum()`, `isna().sum()` |
+| Remove duplicates | `duplicated()`, `drop_duplicates()` |
+| Fill missing values | `fillna()` |
+| Drop rows with nulls | `dropna()` |
+| Parse date strings | `pd.to_datetime()` |
+| Export cleaned data | `to_excel()` |
+
+> **Goal:** Complete end‑to‑end cleaning of a dataset — **the most important notebook in the guide**.
 
 ---
 
-### Step 3 — `hr.ipynb` &nbsp;👥 Cleaning Categorical Data
-> **Dataset:** `HR-Employee-Attrition.csv`  
-> **Concepts:** `drop()`, `rename()`, `astype()`, `value_counts()`, `replace()`, export to CSV  
-> **Goal:** Handle mixed numeric + categorical columns; understand employee attrition data.
+### Step 3 — 👥 Cleaning Categorical Data
+**Notebook:** [`data_cleaning/hr.ipynb`](https://github.com/Cy-nape/PANDAS-learning-/blob/main/data_cleaning/hr.ipynb)  
+**Dataset:** [`HR-Employee-Attrition.csv`](https://github.com/Cy-nape/PANDAS-learning-/blob/main/data_cleaning/HR-Employee-Attrition.csv)
+
+| Concept | Method |
+|---------|--------|
+| Drop useless columns | `drop(columns=[...])` |
+| Rename columns | `rename(columns={...})` |
+| Handle categorical data | `value_counts()`, `replace()` |
+| Convert types | `astype()` |
+| Export cleaned CSV | `to_csv(index=False)` |
+
+> **Goal:** Handle mixed numeric + categorical columns in real HR employee data.
 
 ---
 
-### Step 4 — `zomatowala.ipynb` &nbsp;🍽️ Advanced String Cleaning
-> **Dataset:** `zomato.csv`  
-> **Concepts:** `str.strip()`, `str.replace()`, `str.lower()`, `str.contains()`, `nunique()`, `apply()`, `lambda`  
-> **Goal:** Clean messy restaurant data with 51 steps — the most comprehensive cleaning notebook.
+### Step 4 — 🍽️ Advanced String Cleaning
+**Notebook:** [`data_cleaning/zomatowala.ipynb`](https://github.com/Cy-nape/PANDAS-learning-/blob/main/data_cleaning/zomatowala.ipynb)  
+**Dataset:** Zomato restaurant data (included in notebook)
+
+| Concept | Method |
+|---------|--------|
+| Remove currency symbols | `str.replace('₹', '')` |
+| Strip whitespace | `str.strip()` |
+| Lowercase text | `str.lower()` |
+| Count unique values | `nunique()` |
+| Apply custom logic | `apply()` + `lambda` |
+
+> **Goal:** Clean messy restaurant data across 50+ steps — the **most comprehensive** cleaning notebook.
 
 ---
 
-### Step 5 — `sales.ipynb` &nbsp;💰 Missing Values & Export
-> **Dataset:** `sales.csv`  
-> **Concepts:** `dropna()`, `fillna(method='ffill')`, `isnull()`, `to_excel()`, `to_csv()`  
-> **Goal:** Handle missing values in business data and export the clean version.
+### Step 5 — 💰 Missing Values & Export
+**Notebook:** [`data_cleaning/sales.ipynb`](https://github.com/Cy-nape/PANDAS-learning-/blob/main/data_cleaning/sales.ipynb)  
+**Dataset:** [`sales.csv`](https://github.com/Cy-nape/PANDAS-learning-/blob/main/data_cleaning/sales.csv)
+
+| Concept | Method |
+|---------|--------|
+| Count total nulls | `isnull().sum().sum()` |
+| Drop null rows | `dropna(inplace=True)` |
+| Forward fill nulls | `fillna(method='ffill')` |
+| Export to Excel | `to_excel(index=False)` |
+| Export to CSV | `to_csv(index=False)` |
+
+> **Goal:** Handle missing values in business sales data and export the cleaned version.
 
 ---
 
-### Step 6 — `fashion.ipynb` &nbsp;👗 Column Cleaning
-> **Dataset:** `FashionDataset.csv`  
-> **Concepts:** `drop(columns=...)`, `rename()`, `str.lower()`, `str.strip()`, handling unnamed columns  
-> **Goal:** Remove unwanted columns and clean column names in e‑commerce data.
+### Step 6 — 👗 Column Cleaning
+**Notebook:** [`data_cleaning/fashion.ipynb`](https://github.com/Cy-nape/PANDAS-learning-/blob/main/data_cleaning/fashion.ipynb)  
+**Dataset:** [`FashionDataset.csv`](https://github.com/Cy-nape/PANDAS-learning-/blob/main/data_cleaning/FashionDataset.csv)
+
+| Concept | Method |
+|---------|--------|
+| Drop unnamed index column | `drop(columns='Unnamed: 0')` |
+| Check missing values | `isnull().sum()` |
+| Clean column names | `str.lower()`, `str.strip()` |
+| Check data types | `.dtypes` |
+
+> **Goal:** Remove unwanted columns and clean column names in e‑commerce fashion data.
 
 ---
 
-### Step 7 — `notebook.ipynb` &nbsp;🏠 Large Dataset Exploration
-> **Dataset:** `Airbnb_Open_Data.csv` (~36 MB)  
-> **Concepts:** `head()`, `info()`, `columns`, memory‑efficient reading  
-> **Goal:** Understand how to explore a very large dataset without crashing the kernel.
+### Step 7 — 🏠 Large Dataset Exploration
+**Notebook:** [`data_cleaning/notebook.ipynb`](https://github.com/Cy-nape/PANDAS-learning-/blob/main/data_cleaning/notebook.ipynb)  
+**Dataset:** [`Airbnb_Open_Data.csv`](https://github.com/Cy-nape/PANDAS-learning-/blob/main/data_cleaning/Airbnb_Open_Data.csv) (~36 MB)
+
+| Concept | Method |
+|---------|--------|
+| Load a large CSV | `pd.read_csv()` |
+| Preview safely | `head()` |
+| Inspect columns | `.columns`, `.info()` |
+
+> **Goal:** Understand how to explore a very large dataset without crashing your kernel.
 
 ---
 
-### Step 8 — `pyjanitor.ipynb` &nbsp;🧹 Automated Cleaning with pyjanitor
-> **Dataset:** Synthetic HR data  
-> **Concepts:** `clean_names()`, `remove_empty()`, `rename_column()`, `filter_on()`, `expand_column()`  
-> **Goal:** Use the `pyjanitor` library to clean DataFrames with method chaining in one line.
+### Step 8 — 🧹 Automated Cleaning with pyjanitor
+**Notebook:** [`data_cleaning/pyjanitor.ipynb`](https://github.com/Cy-nape/PANDAS-learning-/blob/main/data_cleaning/pyjanitor.ipynb)  
+**Dataset:** Synthetically generated HR-like data
+
+| Concept | pyjanitor Method |
+|---------|-----------------|
+| Standardise column names | `clean_names()` |
+| Remove empty rows/cols | `remove_empty()` |
+| Rename a column | `rename_column()` |
+| Filter rows | `filter_on()` |
+| Expand multi-value cells | `expand_column()` |
+
+> **Goal:** Use `pyjanitor` to clean DataFrames with beautiful one-line method chaining.
 
 ---
 
-### Step 9 — `matplotlib.ipynb` &nbsp;📊 Visualising Clean Data
-> **Concepts:** `plt.plot()`, `plt.bar()`, `plt.scatter()`, `plt.hist()`, customising charts  
-> **Goal:** After cleaning, visualise the data to find patterns and insights.
+### Step 9 — 📊 Visualising Clean Data
+**Notebook:** [`data_cleaning/matplotlib.ipynb`](https://github.com/Cy-nape/PANDAS-learning-/blob/main/data_cleaning/matplotlib.ipynb)  
+**Dataset:** Custom numeric data
+
+| Chart Type | Method |
+|------------|--------|
+| Line chart | `plt.plot()` |
+| Bar chart | `plt.bar()` |
+| Scatter plot | `plt.scatter()` |
+| Histogram | `plt.hist()` |
+| Customise | `color`, `marker`, `label`, `title` |
+
+> **Goal:** Visualise clean data to find patterns — the final step of every data project.
 
 ---
 
